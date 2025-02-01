@@ -1,3 +1,2 @@
-# Ignore all directories inside repo/ (except for files)
-repo/**/
-!repo/**/*
+repo/**
+!repo/README.md
