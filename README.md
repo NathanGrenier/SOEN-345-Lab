@@ -59,3 +59,12 @@ The following is the Pitest configuration used to generate the mutation test cov
 ## Java Version
 
 Make sure to use java version 11 (11.0.2-oracle).
+
+## Generating the Pitest Reports
+
+Once the `pom.xml` has been modified, use the following command to generate the reports:
+```
+mvn clean test org.pitest:pitest-maven:mutationCoverage
+```
+
+The timestamps for each report will be displayed in the console.
