@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Created-By: 11.0.2 (Oracle Corporation)
 Tool: Bnd-0.0.238
-Bnd-LastModified: 1738986380571
+Bnd-LastModified: 1739052313556
 Export-Package: org.apache.commons.codec.net;version="1.4.0.SNAPSHOT",or
  g.apache.commons.codec.binary;version="1.4.0.SNAPSHOT",org.apache.commo
  ns.codec;version="1.4.0.SNAPSHOT",org.apache.commons.codec.language;ver

@@ -188,6 +188,10 @@
         <groupId>org.pitest</groupId>
         <artifactId>pitest-maven</artifactId>
         <version>${pitest.version}</version>
+        <configuration>
+          <threads>6</threads>
+          <timestampedReports>true</timestampedReports>
+        </configuration>
         <executions>
           <execution>
             <id>mutation-coverage-all</id>
@@ -199,7 +203,6 @@
               <mutators>
                 <mutator>ALL</mutator>
               </mutators>
-              <timestampedReports>true</timestampedReports>
               <reportsDirectory>${project.build.directory}/pit-reports/all</reportsDirectory>
             </configuration>
           </execution>
@@ -213,7 +216,6 @@
               <mutators>
                 <mutator>STRONGER</mutator>
               </mutators>
-              <timestampedReports>true</timestampedReports>
               <reportsDirectory>${project.build.directory}/pit-reports/stronger</reportsDirectory>
             </configuration>
           </execution>

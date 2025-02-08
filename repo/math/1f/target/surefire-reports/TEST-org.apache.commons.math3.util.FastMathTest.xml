@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.commons.math3.util.FastMathTest" time="5.585" tests="48" errors="0" skipped="1" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="11.0.2+9"/>
+    <property name="sun.boot.library.path" value="/java/jdk-11.0.2/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/code/concordia/SOEN-345-Lab/repo/math/1f"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/code/concordia/SOEN-345-Lab/repo/math/1f"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="11.0.2+9"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="55.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.15.150.1-microsoft-standard-WSL2"/>
+    <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
+    <property name="user.home" value="/root"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="user.name" value="root"/>
+    <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test org.pitest:pitest-maven:mutationCoverage"/>
+    <property name="java.home" value="/java/jdk-11.0.2"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="11.0.2"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/usr/share/maven"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2019-01-15"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testLogSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testDoubleNextAfterSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testIndicatorDouble" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testAtan2SpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testCbrtAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.81"/>
+  <testcase name="testAtan2" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="checkMissingFastMathClasses" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testLogAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.066"/>
+  <testcase name="testLog1pSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testAcosAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.772"/>
+  <testcase name="testMinMaxDouble" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testAcosSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0.001"/>
+  <testcase name="testPowSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testDoubleScalbSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testTanhAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="1.249"/>
+  <testcase name="testMath905LargePositive" classname="org.apache.commons.math3.util.FastMathTest" time="0.002"/>
+  <testcase name="testMath905LargeNegative" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testToRadians" classname="org.apache.commons.math3.util.FastMathTest" time="0.017"/>
+  <testcase name="testLogWithBase" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testConstants" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testTanAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.055"/>
+  <testcase name="testMath904" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testFloatScalbSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testToDegrees" classname="org.apache.commons.math3.util.FastMathTest" time="0.017"/>
+  <testcase name="testSignumFloat" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testSinAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.037"/>
+  <testcase name="testAtan2Accuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.058"/>
+  <testcase name="testFloatNextAfterSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0.001"/>
+  <testcase name="testExpm1Accuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.037"/>
+  <testcase name="testSignumDouble" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testMinMaxFloat" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testHyperbolic" classname="org.apache.commons.math3.util.FastMathTest" time="0.023"/>
+  <testcase name="testCoshAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.621"/>
+  <testcase name="testIntPow" classname="org.apache.commons.math3.util.FastMathTest" time="0.008"/>
+  <testcase name="testIndicatorFloat" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testPowAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.106"/>
+  <testcase name="testExpSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0.001"/>
+  <testcase name="testLog10Accuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.095"/>
+  <testcase name="testAtanAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.054"/>
+  <testcase name="testNextAfter" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testLog1pAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.043"/>
+  <testcase name="testHyperbolicInverses" classname="org.apache.commons.math3.util.FastMathTest" time="0.007"/>
+  <testcase name="checkExtraFastMathClasses" classname="org.apache.commons.math3.util.FastMathTest" time="0">
+    <skipped/>
+  </testcase>
+  <testcase name="testAsinSpecialCases" classname="org.apache.commons.math3.util.FastMathTest" time="0"/>
+  <testcase name="testAsinAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.734"/>
+  <testcase name="testCosAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.034"/>
+  <testcase name="testExpAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.078"/>
+  <testcase name="testSinhAccuracy" classname="org.apache.commons.math3.util.FastMathTest" time="0.659"/>
+</testsuite>

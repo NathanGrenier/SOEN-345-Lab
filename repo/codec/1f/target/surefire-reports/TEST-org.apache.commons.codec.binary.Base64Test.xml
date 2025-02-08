@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="29" failures="0" name="org.apache.commons.codec.binary.Base64Test" time="0.027" errors="0" skipped="0">
+<testsuite tests="29" failures="0" name="org.apache.commons.codec.binary.Base64Test" time="0.022" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="localRepository" value="/root/.m2/repository"/>
@@ -13,7 +13,7 @@
     <property name="env.LANG" value="C.UTF-8"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.runtime.version" value="11.0.2+9"/>
-    <property name="env._P9K_TTY" value="/dev/pts/2"/>
+    <property name="env._P9K_TTY" value="/dev/pts/6"/>
     <property name="env.NVM_CD_FLAGS" value="-q"/>
     <property name="env.DISPLAY" value=":0"/>
     <property name="env.PYENV_SHELL" value="zsh"/>
@@ -23,38 +23,46 @@
     <property name="env.USER" value="root"/>
     <property name="env.SHELL" value="/usr/bin/zsh"/>
     <property name="env.ZPFX" value="/root/.local/share/zinit/polaris"/>
-    <property name="env.PATH" value="/root/.sdkman/candidates/java/current/bin:/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/shims:/root/.pyenv/bin:/root/.nvm/versions/node/v20.18.1/bin:/root/.local/bin:/root/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-11.0.14.101-hotspot/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.2.8-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/FileBot/:/mnt/c/Program Files/Calibre2/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/doxygen/bin:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/Nathan/AppData/Local/BCML/bin:/mnt/c/Users/Nathan/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Multipass/bin:/mnt/c/Users/Nathan/.dotnet/tools:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Program Files/Java/scripts:/mnt/c/Users/Nathan/AppData/Roaming/npm:/mnt/c/php:/mnt/c/Users/Nathan/flutter/bin:/mnt/c/Users/Nathan/AppData/Local/Pub/Cache/bin:/mnt/c/Users/Nathan/AppData/Local/Android/Sdk/platform-tools/adb.exe:/mnt/c/Users/Nathan/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/bin:/root/.fzf/bin:/opt/defects4j/framework/bin"/>
+    <property name="env.VSCODE_NONCE" value="a673e5c7-2116-4d19-be88-a4c759d00130"/>
+    <property name="env.PATH" value="/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/shims:/root/.pyenv/bin:/root/.local/bin:/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/bin/remote-cli:/root/.sdkman/candidates/java/current/bin:/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/bin:/root/.nvm/versions/node/v20.18.1/bin:/root/.local/bin:/root/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-11.0.14.101-hotspot/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.2.8-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/FileBot/:/mnt/c/Program Files/Calibre2/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/Nathan/AppData/Local/BCML/bin:/mnt/c/Users/Nathan/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Multipass/bin:/mnt/c/Users/Nathan/.dotnet/tools:/mnt/c/Program Files/Java/scripts:/mnt/c/Users/Nathan/AppData/Roaming/npm:/mnt/c/php:/mnt/c/Users/Nathan/flutter/bin:/mnt/c/Users/Nathan/AppData/Local/Pub/Cache/bin:/mnt/c/Users/Nathan/AppData/Local/Android/Sdk/platform-tools/adb.exe:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/bin:/root/.fzf/bin:/opt/defects4j/framework/bin:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/bin:/opt/defects4j/framework/bin"/>
     <property name="user.language" value="en"/>
     <property name="sun.boot.library.path" value="/java/jdk-11.0.2/lib"/>
     <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
+    <property name="env.VSCODE_GIT_ASKPASS_MAIN" value="/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/extensions/git/dist/askpass-main.js"/>
     <property name="env.HOSTTYPE" value="x86_64"/>
     <property name="env.PYENV_ROOT" value="/root/.pyenv"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.version" value="11.0.2"/>
     <property name="user.timezone" value=""/>
+    <property name="env.ZDOTDIR" value="/root"/>
     <property name="env.WSL2_GUI_APPS_ENABLED" value="1"/>
     <property name="env.DBUS_SESSION_BUS_ADDRESS" value="unix:path=/run/user/0/bus"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="env.PULSE_SERVER" value="unix:/mnt/wslg/PulseServer"/>
+    <property name="env.VSCODE_INJECTION" value="1"/>
     <property name="env.NAME" value="Nathan"/>
     <property name="env.P9K_SSH" value="0"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="env.SHLVL" value="1"/>
+    <property name="maven.conf" value="/usr/share/maven/conf"/>
     <property name="file.separator" value="/"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="maven.conf" value="/usr/share/maven/conf"/>
+    <property name="env.USER_ZDOTDIR" value="/root"/>
     <property name="java.class.version" value="55.0"/>
+    <property name="env.VSCODE_GIT_ASKPASS_EXTRA_ARGS" value=""/>
     <property name="java.home" value="/java/jdk-11.0.2"/>
     <property name="java.vm.info" value="mixed mode"/>
     <property name="os.version" value="5.15.150.1-microsoft-standard-WSL2"/>
     <property name="env.LOGNAME" value="root"/>
-    <property name="env.WSLENV" value="WT_SESSION:WT_PROFILE_ID:"/>
-    <property name="env.WSL_INTEROP" value="/run/WSL/1606_interop"/>
+    <property name="env.TERM_PROGRAM_VERSION" value="1.96.4"/>
+    <property name="env.WSLENV" value="VSCODE_WSL_EXT_LOCATION/up"/>
+    <property name="env.WSL_INTEROP" value="/run/WSL/2304_interop"/>
     <property name="path.separator" value=":"/>
     <property name="java.vm.version" value="11.0.2+9"/>
     <property name="env.PYENV_VIRTUALENV_INIT" value="1"/>
-    <property name="env.WT_PROFILE_ID" value="{2c4de342-38b7-51cf-b940-2309a097f518}"/>
+    <property name="env.VSCODE_GIT_IPC_HANDLE" value="/run/user/0/vscode-git-b41baf7797.sock"/>
+    <property name="env.VSCODE_IPC_HOOK_CLI" value="/run/user/0/vscode-ipc-8aa15146-d2d3-4232-a4e6-fd4eb0e5472d.sock"/>
     <property name="env.JAVA_HOME" value="/root/.sdkman/candidates/java/current"/>
     <property name="env.FZF_DEFAULT_OPTS" value="--height=~10% --bind left:preview-up,right:preview-down"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
@@ -67,6 +75,7 @@
     <property name="java.version.date" value="2019-01-15"/>
     <property name="env.OLDPWD" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="env.TERM_PROGRAM" value="vscode"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
@@ -78,13 +87,14 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="maven.version" value="3.6.3"/>
     <property name="jdk.debug" value="release"/>
-    <property name="env.WT_SESSION" value="2f2edd33-32be-46b7-95cf-cdf5022d4386"/>
+    <property name="env.GIT_ASKPASS" value="/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/extensions/git/dist/askpass.sh"/>
+    <property name="env.VSCODE_GIT_ASKPASS_NODE" value="/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/node"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="env.HOME" value="/root"/>
-    <property name="env._P9K_SSH_TTY" value="/dev/pts/2"/>
+    <property name="env._P9K_SSH_TTY" value="/dev/pts/6"/>
     <property name="surefire.test.class.path" value="/code/concordia/SOEN-345-Lab/repo/codec/1f/target/test-classes:/code/concordia/SOEN-345-Lab/repo/codec/1f/target/classes:/root/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="maven.multiModuleProjectDirectory" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
@@ -99,6 +109,7 @@
 "/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="env.ZSH_CACHE_DIR" value="/root/.cache/zinit"/>
+    <property name="env.COLORTERM" value="truecolor"/>
     <property name="env.PMSPEC" value="0uUpiPsf"/>
     <property name="basedir" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
     <property name="file.encoding" value="UTF-8"/>
@@ -109,33 +120,33 @@
     <property name="env.WSL_DISTRO_NAME" value="Ubuntu"/>
     <property name="env.MAVEN_PROJECTBASEDIR" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
   </properties>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testTriplets" time="0.002"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeIntegerEdgeCases" time="0.001"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testSingletonsChunked" time="0.002"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testKnownDecodings" time="0"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testTriplets" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeIntegerEdgeCases" time="0"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testSingletonsChunked" time="0"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testKnownDecodings" time="0.001"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDiscardWhitespace" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testEncodeDecodeSmall" time="0.002"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testEncodeDecodeSmall" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testObjectDecodeWithValidParameter" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger1" time="0.002"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger1" time="0.001"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger2" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger3" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger4" time="0"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testCodeInteger4" time="0.001"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testRfc2045Section6Dot8ChunkSizeDefinition" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testObjectEncodeWithInvalidParameter" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testObjectEncodeWithInvalidParameter" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testEncodeDecodeRandom" time="0.008"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testRfc2045Section2Dot1CrLfDefinition" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodeWithWhitespace" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodeWithWhitespace" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodePadOnlyChunked" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testKnownEncodings" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testKnownEncodings" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testIgnoringNonBase64InDecode" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodePadMarkerIndex2" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodePadMarkerIndex3" time="0.001"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testSingletons" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testTripletsChunked" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testTripletsChunked" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testObjectDecodeWithInvalidParameter" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testIsArrayByteBase64" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testDecodePadOnly" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testBase64" time="0"/>
-  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testNonBase64Test" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testNonBase64Test" time="0"/>
   <testcase classname="org.apache.commons.codec.binary.Base64Test" name="testObjectEncodeWithValidParameter" time="0"/>
 </testsuite>
