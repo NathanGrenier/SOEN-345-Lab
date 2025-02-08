@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Created-By: 11.0.2 (Oracle Corporation)
+Tool: Bnd-0.0.238
+Bnd-LastModified: 1738978382627
+Export-Package: org.apache.commons.codec.net;version="1.4.0.SNAPSHOT",or
+ g.apache.commons.codec.binary;version="1.4.0.SNAPSHOT",org.apache.commo
+ ns.codec;version="1.4.0.SNAPSHOT",org.apache.commons.codec.language;ver
+ sion="1.4.0.SNAPSHOT",org.apache.commons.codec.digest;version="1.4.0.SN
+ APSHOT"
+Import-Package: org.apache.commons.codec;version="1.4.0.SNAPSHOT",org.ap
+ ache.commons.codec.binary;version="1.4.0.SNAPSHOT",org.apache.commons.c
+ odec.digest;version="1.4.0.SNAPSHOT",org.apache.commons.codec.language;
+ version="1.4.0.SNAPSHOT",org.apache.commons.codec.net;version="1.4.0.SN
+ APSHOT"
+Bundle-Version: 1.4.0.SNAPSHOT
+Bundle-SymbolicName: org.apache.commons.codec
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-DocURL: http://commons.apache.org/codec/
+Bundle-Description: The codec package contains simple encoder and decode
+ rs for     various formats such as Base64 and Hexadecimal.  In addition
+  to these     widely used encoders and decoders, the codec package also
+  maintains a     collection of phonetic encoding utilities.
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Name: Commons Codec
+
