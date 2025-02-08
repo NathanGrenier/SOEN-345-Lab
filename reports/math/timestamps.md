@@ -1,7 +1,15 @@
 # Math Pitest Report Timestamps
 
-## Run #1
+## ALL Mutations
+### Run #1
 
-## Run #2
+### Run #2
 
-## Run #3
+### Run #3
+
+## STRONGER Mutations
+### Run #1
+
+### Run #2
+
+### Run #3
