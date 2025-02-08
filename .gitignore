@@ -1,4 +1,7 @@
-repo/**
+# repo/**
+# !repo/codec/1b/target/**
+# !/repo/**/target/
+# !/repo/**/target/**
 !repo/README.md
 
 # Other
