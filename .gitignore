@@ -1,6 +1,2 @@
-# repo/**
-# !repo/**/target/**
-# !repo/README.md
-
-# Other
-.vscode/
+repo/**
+!repo/README.md
