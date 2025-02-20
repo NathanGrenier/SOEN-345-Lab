@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="org.apache.commons.csv.CSVPrinterTest" time="0.33" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="org.apache.commons.csv.CSVPrinterTest" time="0.285" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.2+9"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/code/concordia/SOEN-345-Lab/repo/csv/1f"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.2+9"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -65,9 +65,9 @@
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrinter1" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrinter2" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrintNullValues" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testDisabledComment" time="0.001"/>
+  <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testDisabledComment" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testSingleLineComment" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testRandom" time="0.288"/>
+  <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testRandom" time="0.25"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrinter5" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrinter6" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVPrinterTest" name="testPrinter7" time="0"/>

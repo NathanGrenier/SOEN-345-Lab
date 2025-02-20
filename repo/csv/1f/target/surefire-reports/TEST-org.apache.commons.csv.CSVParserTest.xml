@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="24" failures="0" name="org.apache.commons.csv.CSVParserTest" time="0.013" errors="0" skipped="1">
+<testsuite tests="24" failures="0" name="org.apache.commons.csv.CSVParserTest" time="0.012" errors="0" skipped="1">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.2+9"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/code/concordia/SOEN-345-Lab/repo/csv/1f"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.2+9"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -59,13 +59,13 @@
     <property name="java.vendor.version" value="18.9"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLine" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetRecords" time="0.001"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLine" time="0.002"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetRecords" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testExcelFormat1" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testExcelFormat2" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEndOfFileBehaviourExcel" time="0.001"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEndOfFileBehaviorCSV" time="0.001"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEmptyLineBehaviourExcel" time="0"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEndOfFileBehaviorCSV" time="0"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEmptyLineBehaviourExcel" time="0.001"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEmptyLineBehaviourCSV" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testEmptyFile" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testBackslashEscapingOld" time="0.001">
@@ -76,13 +76,13 @@
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testDefaultFormat" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testCarriageReturnLineFeedEndings" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testCarriageReturnEndings" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testLineFeedEndings" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testIgnoreEmptyLines" time="0.001"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testForEach" time="0"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testLineFeedEndings" time="0.001"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testIgnoreEmptyLines" time="0"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testForEach" time="0.001"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testIterator" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testHeader" time="0.001"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testProvidedHeader" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLineNumberWithLF" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLineNumberWithCRLF" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLineNumberWithCR" time="0.001"/>
+  <testcase classname="org.apache.commons.csv.CSVParserTest" name="testGetLineNumberWithCR" time="0"/>
 </testsuite>

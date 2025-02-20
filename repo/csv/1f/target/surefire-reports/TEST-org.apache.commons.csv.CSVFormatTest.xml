@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/code/concordia/SOEN-345-Lab/repo/csv/1f"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="11.0.2+9"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
@@ -63,5 +63,5 @@
   <testcase classname="org.apache.commons.csv.CSVFormatTest" name="testMutators" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVFormatTest" name="testFormat" time="0"/>
   <testcase classname="org.apache.commons.csv.CSVFormatTest" name="testValidation" time="0"/>
-  <testcase classname="org.apache.commons.csv.CSVFormatTest" name="testSerialization" time="0.017"/>
+  <testcase classname="org.apache.commons.csv.CSVFormatTest" name="testSerialization" time="0.019"/>
 </testsuite>

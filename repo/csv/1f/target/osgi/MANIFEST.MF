@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Created-By: Apache Maven Bundle Plugin
 Tool: Bnd-1.43.0
-Bnd-LastModified: 1738988339939
+Bnd-LastModified: 1740070690333
 Export-Package: org.apache.commons.csv;version="1.0.0.SNAPSHOT"
 Bundle-DocURL: http://commons.apache.org/proper/csv/
 Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
