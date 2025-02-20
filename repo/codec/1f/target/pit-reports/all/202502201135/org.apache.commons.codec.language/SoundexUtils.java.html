@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>SoundexUtils.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Licensed to the Apache Software Foundation (ASF) under one or more</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * contributor license agreements.  See the NOTICE file distributed with</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * this work for additional information regarding copyright ownership.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * The ASF licenses this file to You under the Apache License, Version 2.0</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * (the &#34;License&#34;); you may not use this file except in compliance with</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * the License.  You may obtain a copy of the License at</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *      http://www.apache.org/licenses/LICENSE-2.0</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Unless required by applicable law or agreed to in writing, software</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * distributed under the License is distributed on an &#34;AS IS&#34; BASIS,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * See the License for the specific language governing permissions and</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * limitations under the License.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.apache.commons.codec.language;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.apache.commons.codec.EncoderException;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.apache.commons.codec.StringEncoder;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Utility methods for {@link Soundex} and {@link RefinedSoundex} classes.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @author Apache Software Foundation</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @version $Id$</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @since 1.3</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>final class SoundexUtils {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * Cleans up the input string before Soundex processing by only returning</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * upper case letters.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param str</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  The String to clean.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @return A clean String.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static String clean(String str) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_41'/>
+41
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_41'>13</a>
+<span>
+1. clean : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. clean : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+3. clean : not equal to greater than &rarr; SURVIVED<br/>
+4. clean : not equal to greater or equal &rarr; SURVIVED<br/>
+5. clean : negated conditional &rarr; KILLED<br/>
+6. clean : negated conditional &rarr; KILLED<br/>
+7. clean : removed call to java/lang/String::length &rarr; KILLED<br/>
+8. clean : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+9. clean : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+10. clean : not equal to less than &rarr; KILLED<br/>
+11. clean : not equal to less or equal &rarr; KILLED<br/>
+12. clean : equal to not equal &rarr; KILLED<br/>
+13. clean : not equal to equal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (str == null || str.length() == 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_42'/>
+42
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_42'>3</a>
+<span>
+1. clean : replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; SURVIVED<br/>
+2. clean : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+3. clean : mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            return str;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_44'/>
+44
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_44'>1</a>
+<span>
+1. clean : removed call to java/lang/String::length &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int len = str.length();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_45'>5</a>
+<span>
+1. clean : Negated integer local variable number 1 &rarr; KILLED<br/>
+2. clean : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+3. clean : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+4. clean : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+5. clean : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        char[] chars = new char[len];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_46'>5</a>
+<span>
+1. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+2. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+3. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+4. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+5. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int count = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_47'/>
+47
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_47'>25</a>
+<span>
+1. clean : greater or equal to equal &rarr; SURVIVED<br/>
+2. clean : changed conditional boundary &rarr; KILLED<br/>
+3. clean : Changed increment from 1 to -1 &rarr; KILLED<br/>
+4. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+5. clean : negated conditional &rarr; KILLED<br/>
+6. clean : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+7. clean : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+8. clean : Negated integer local variable number 4 &rarr; KILLED<br/>
+9. clean : Negated integer local variable number 1 &rarr; KILLED<br/>
+10. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+11. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+12. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+13. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+14. clean : greater or equal to less than &rarr; KILLED<br/>
+15. clean : greater or equal to less or equal &rarr; KILLED<br/>
+16. clean : greater or equal to greater than &rarr; KILLED<br/>
+17. clean : greater or equal to not equal &rarr; KILLED<br/>
+18. clean : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+19. clean : Incremented (a++) integer local variable number 1 &rarr; KILLED<br/>
+20. clean : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+21. clean : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+22. clean : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+23. clean : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+24. clean : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+25. clean : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (int i = 0; i &#60; len; i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_48'/>
+48
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_48'>15</a>
+<span>
+1. clean : equal to less or equal &rarr; SURVIVED<br/>
+2. clean : Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT<br/>
+3. clean : negated conditional &rarr; KILLED<br/>
+4. clean : removed call to java/lang/String::charAt &rarr; KILLED<br/>
+5. clean : removed call to java/lang/Character::isLetter &rarr; KILLED<br/>
+6. clean : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+7. clean : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+8. clean : Negated integer local variable number 4 &rarr; KILLED<br/>
+9. clean : equal to less than &rarr; KILLED<br/>
+10. clean : equal to greater than &rarr; KILLED<br/>
+11. clean : equal to greater or equal &rarr; KILLED<br/>
+12. clean : equal to not equal &rarr; KILLED<br/>
+13. clean : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+14. clean : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+15. clean : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (Character.isLetter(str.charAt(i))) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_49'>13</a>
+<span>
+1. clean : Changed increment from 1 to -1 &rarr; KILLED<br/>
+2. clean : removed call to java/lang/String::charAt &rarr; KILLED<br/>
+3. clean : Removed increment 1 &rarr; KILLED<br/>
+4. clean : Negated integer local variable number 3 &rarr; KILLED<br/>
+5. clean : Negated integer local variable number 4 &rarr; KILLED<br/>
+6. clean : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+7. clean : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+8. clean : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+9. clean : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+10. clean : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+11. clean : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+12. clean : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+13. clean : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                chars[count++] = str.charAt(i);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_52'/>
+52
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_52'>18</a>
+<span>
+1. clean : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. clean : Negated integer local variable number 3 &rarr; SURVIVED<br/>
+3. clean : Negated integer local variable number 1 &rarr; SURVIVED<br/>
+4. clean : not equal to less than &rarr; SURVIVED<br/>
+5. clean : not equal to less or equal &rarr; SURVIVED<br/>
+6. clean : Incremented (a++) integer local variable number 1 &rarr; SURVIVED<br/>
+7. clean : Decremented (a--) integer local variable number 1 &rarr; SURVIVED<br/>
+8. clean : Incremented (++a) integer local variable number 1 &rarr; SURVIVED<br/>
+9. clean : negated conditional &rarr; KILLED<br/>
+10. clean : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+11. clean : not equal to greater than &rarr; KILLED<br/>
+12. clean : not equal to greater or equal &rarr; KILLED<br/>
+13. clean : not equal to equal &rarr; KILLED<br/>
+14. clean : Incremented (a++) integer local variable number 3 &rarr; KILLED<br/>
+15. clean : Decremented (a--) integer local variable number 3 &rarr; KILLED<br/>
+16. clean : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+17. clean : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+18. clean : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (count == len) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_53'>5</a>
+<span>
+1. clean : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. clean : removed call to java/lang/String::toUpperCase &rarr; KILLED<br/>
+3. clean : mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. clean : replaced call to java/lang/String::toUpperCase with receiver &rarr; KILLED<br/>
+5. clean : replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return str.toUpperCase(java.util.Locale.ENGLISH);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_55'/>
+55
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_55'>16</a>
+<span>
+1. clean : Incremented (a++) integer local variable number 3 &rarr; SURVIVED<br/>
+2. clean : Decremented (a--) integer local variable number 3 &rarr; SURVIVED<br/>
+3. clean : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+4. clean : removed call to java/lang/String::&#60;init&#62; &rarr; KILLED<br/>
+5. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+6. clean : removed call to java/lang/String::toUpperCase &rarr; KILLED<br/>
+7. clean : mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+8. clean : replaced call to java/lang/String::toUpperCase with receiver &rarr; KILLED<br/>
+9. clean : replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; KILLED<br/>
+10. clean : Negated integer local variable number 3 &rarr; KILLED<br/>
+11. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+12. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+13. clean : Substituted 0 with 1 &rarr; KILLED<br/>
+14. clean : Substituted 0 with -1 &rarr; KILLED<br/>
+15. clean : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+16. clean : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return new String(chars, 0, count).toUpperCase(java.util.Locale.ENGLISH);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * Encodes the Strings and returns the number of characters in the two</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * encoded Strings that are the same.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;li&#62;For Soundex, this return value ranges from 0 through 4: 0 indicates</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * little or no similarity, and 4 indicates strong similarity or identical</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * values.&#60;/li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;li&#62;For refined Soundex, the return value can be greater than 4.&#60;/li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;/ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param encoder</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  The encoder to use to encode the Strings.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param s1</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  A String that will be encoded and compared.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param s2</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  A String that will be encoded and compared.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @return The number of characters in the two Soundex encoded Strings that</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *             are the same.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @see #differenceEncoded(String,String)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @see &#60;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_de-dz_8co5.asp&#34;&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *          MS T-SQL DIFFERENCE&#60;/a&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @throws EncoderException</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  if an error occurs encoding one of the strings</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static int difference(StringEncoder encoder, String s1, String s2) throws EncoderException {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_85'/>
+85
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_85'>7</a>
+<span>
+1. difference : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. difference : removed call to org/apache/commons/codec/StringEncoder::encode &rarr; KILLED<br/>
+3. difference : removed call to org/apache/commons/codec/StringEncoder::encode &rarr; KILLED<br/>
+4. difference : removed call to org/apache/commons/codec/language/SoundexUtils::differenceEncoded &rarr; KILLED<br/>
+5. difference : replaced call to org/apache/commons/codec/StringEncoder::encode with argument &rarr; KILLED<br/>
+6. difference : replaced call to org/apache/commons/codec/StringEncoder::encode with argument &rarr; KILLED<br/>
+7. difference : replaced int return with 0 for org/apache/commons/codec/language/SoundexUtils::difference &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return differenceEncoded(encoder.encode(s1), encoder.encode(s2));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * Returns the number of characters in the two Soundex encoded Strings that</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * are the same.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;li&#62;For Soundex, this return value ranges from 0 through 4: 0 indicates</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * little or no similarity, and 4 indicates strong similarity or identical</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * values.&#60;/li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;li&#62;For refined Soundex, the return value can be greater than 4.&#60;/li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * &#60;/ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param es1</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  An encoded String.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @param es2</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *                  An encoded String.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @return The number of characters in the two Soundex encoded Strings that</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *             are the same.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; * @see &#60;a href=&#34;http://msdn.microsoft.com/library/default.asp?url=/library/en-us/tsqlref/ts_de-dz_8co5.asp&#34;&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; *          MS T-SQL DIFFERENCE&#60;/a&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9; */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static int differenceEncoded(String es1, String es2) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_110'/>
+110
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_110'>8</a>
+<span>
+1. differenceEncoded : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. differenceEncoded : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+3. differenceEncoded : negated conditional &rarr; KILLED<br/>
+4. differenceEncoded : negated conditional &rarr; KILLED<br/>
+5. differenceEncoded : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. differenceEncoded : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+7. differenceEncoded : equal to not equal &rarr; KILLED<br/>
+8. differenceEncoded : not equal to equal &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (es1 == null || es2 == null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_111'/>
+111
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_111'>6</a>
+<span>
+1. differenceEncoded : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+3. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+4. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+5. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+6. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_113'>4</a>
+<span>
+1. differenceEncoded : removed call to java/lang/String::length &rarr; KILLED<br/>
+2. differenceEncoded : removed call to java/lang/String::length &rarr; KILLED<br/>
+3. differenceEncoded : removed call to java/lang/Math::min &rarr; KILLED<br/>
+4. differenceEncoded : replaced call to java/lang/Math::min with argument &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int lengthToMatch = Math.min(es1.length(), es2.length());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_114'/>
+114
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_114'>5</a>
+<span>
+1. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+2. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+3. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+4. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+5. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        int diff = 0;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_115'/>
+115
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_115'>25</a>
+<span>
+1. differenceEncoded : greater or equal to equal &rarr; SURVIVED<br/>
+2. differenceEncoded : changed conditional boundary &rarr; KILLED<br/>
+3. differenceEncoded : Changed increment from 1 to -1 &rarr; KILLED<br/>
+4. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+5. differenceEncoded : negated conditional &rarr; KILLED<br/>
+6. differenceEncoded : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+7. differenceEncoded : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+8. differenceEncoded : Negated integer local variable number 4 &rarr; KILLED<br/>
+9. differenceEncoded : Negated integer local variable number 2 &rarr; KILLED<br/>
+10. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+11. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+12. differenceEncoded : Substituted 0 with 1 &rarr; KILLED<br/>
+13. differenceEncoded : Substituted 0 with -1 &rarr; KILLED<br/>
+14. differenceEncoded : greater or equal to less than &rarr; KILLED<br/>
+15. differenceEncoded : greater or equal to less or equal &rarr; KILLED<br/>
+16. differenceEncoded : greater or equal to greater than &rarr; KILLED<br/>
+17. differenceEncoded : greater or equal to not equal &rarr; KILLED<br/>
+18. differenceEncoded : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+19. differenceEncoded : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+20. differenceEncoded : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+21. differenceEncoded : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+22. differenceEncoded : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+23. differenceEncoded : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+24. differenceEncoded : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+25. differenceEncoded : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (int i = 0; i &#60; lengthToMatch; i++) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_116'/>
+116
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_116'>20</a>
+<span>
+1. differenceEncoded : Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT<br/>
+2. differenceEncoded : negated conditional &rarr; KILLED<br/>
+3. differenceEncoded : removed call to java/lang/String::charAt &rarr; KILLED<br/>
+4. differenceEncoded : removed call to java/lang/String::charAt &rarr; KILLED<br/>
+5. differenceEncoded : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. differenceEncoded : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+7. differenceEncoded : Negated integer local variable number 4 &rarr; KILLED<br/>
+8. differenceEncoded : Negated integer local variable number 4 &rarr; KILLED<br/>
+9. differenceEncoded : not equal to less than &rarr; KILLED<br/>
+10. differenceEncoded : not equal to less or equal &rarr; KILLED<br/>
+11. differenceEncoded : not equal to greater than &rarr; KILLED<br/>
+12. differenceEncoded : not equal to greater or equal &rarr; KILLED<br/>
+13. differenceEncoded : not equal to equal &rarr; KILLED<br/>
+14. differenceEncoded : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+15. differenceEncoded : Incremented (a++) integer local variable number 4 &rarr; KILLED<br/>
+16. differenceEncoded : Decremented (a--) integer local variable number 4 &rarr; KILLED<br/>
+17. differenceEncoded : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+18. differenceEncoded : Incremented (++a) integer local variable number 4 &rarr; KILLED<br/>
+19. differenceEncoded : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+20. differenceEncoded : Decremented (--a) integer local variable number 4 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>            if (es1.charAt(i) == es2.charAt(i)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_117'/>
+117
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_117'>2</a>
+<span>
+1. differenceEncoded : Changed increment from 1 to -1 &rarr; KILLED<br/>
+2. differenceEncoded : Removed increment 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                diff++;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_120'/>
+120
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_120'>7</a>
+<span>
+1. differenceEncoded : Incremented (a++) integer local variable number 3 &rarr; SURVIVED<br/>
+2. differenceEncoded : Decremented (a--) integer local variable number 3 &rarr; SURVIVED<br/>
+3. differenceEncoded : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+4. differenceEncoded : replaced int return with 0 for org/apache/commons/codec/language/SoundexUtils::differenceEncoded &rarr; KILLED<br/>
+5. differenceEncoded : Negated integer local variable number 3 &rarr; KILLED<br/>
+6. differenceEncoded : Incremented (++a) integer local variable number 3 &rarr; KILLED<br/>
+7. differenceEncoded : Decremented (--a) integer local variable number 3 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        return diff;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@12678944_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@12678944_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed call to java/lang/String::length &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to less or equal &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> not equal to greater than &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> not equal to greater or equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to equal &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_42'>42</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_42'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_44'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed call to java/lang/String::length &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_47'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to greater than &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> greater or equal to equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_48'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::charAt &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/Character::isLetter &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> equal to less than &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> equal to less or equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed call to java/lang/String::charAt &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Removed increment 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_52'>52</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_52'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> negated conditional &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 3 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 1 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> not equal to less than &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> not equal to less or equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> not equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 3 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 3 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::toUpperCase &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced call to java/lang/String::toUpperCase with receiver &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::&#60;init&#62; &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::toUpperCase &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> mutated return of Object value for org/apache/commons/codec/language/SoundexUtils::clean to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> replaced call to java/lang/String::toUpperCase with receiver &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced return value with &#34;&#34; for org/apache/commons/codec/language/SoundexUtils::clean &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>clean<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_85'>85</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_85'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to org/apache/commons/codec/StringEncoder::encode &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to org/apache/commons/codec/StringEncoder::encode &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to org/apache/commons/codec/language/SoundexUtils::differenceEncoded &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced call to org/apache/commons/codec/StringEncoder::encode with argument &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced call to org/apache/commons/codec/StringEncoder::encode with argument &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>difference<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced int return with 0 for org/apache/commons/codec/language/SoundexUtils::difference &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_110'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to equal &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_111'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::length &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::length &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/Math::min &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced call to java/lang/Math::min with argument &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_115'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Substituted 0 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to greater than &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> greater or equal to equal &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> greater or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::charAt &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed call to java/lang/String::charAt &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to greater or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> not equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (a++) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (a--) integer local variable number 4 &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 4 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Removed increment 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@12678944_120'>120</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@12678944_120'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> replaced int return with 0 for org/apache/commons/codec/language/SoundexUtils::differenceEncoded &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Negated integer local variable number 3 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Incremented (++a) integer local variable number 3 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>differenceEncoded<br/><b>Killed by : </b>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest)</span></span> Decremented (--a) integer local variable number 3 &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>ABS</li>
+<li class='mutator'>AOD1</li>
+<li class='mutator'>AOD2</li>
+<li class='mutator'>AOR1</li>
+<li class='mutator'>AOR2</li>
+<li class='mutator'>AOR3</li>
+<li class='mutator'>AOR4</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>CRCR1</li>
+<li class='mutator'>CRCR2</li>
+<li class='mutator'>CRCR3</li>
+<li class='mutator'>CRCR4</li>
+<li class='mutator'>CRCR5</li>
+<li class='mutator'>CRCR6</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>OBBN1</li>
+<li class='mutator'>OBBN2</li>
+<li class='mutator'>OBBN3</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>ROR1</li>
+<li class='mutator'>ROR2</li>
+<li class='mutator'>ROR3</li>
+<li class='mutator'>ROR4</li>
+<li class='mutator'>ROR5</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>UOI1</li>
+<li class='mutator'>UOI2</li>
+<li class='mutator'>UOI3</li>
+<li class='mutator'>UOI4</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.apache.commons.codec.language.RefinedSoundexTest.testDifference(org.apache.commons.codec.language.RefinedSoundexTest) (0 ms)</li><li>org.apache.commons.codec.StringEncoderComparatorTest.testComparatorWithSoundex(org.apache.commons.codec.StringEncoderComparatorTest) (1 ms)</li><li>org.apache.commons.codec.language.RefinedSoundexTest.testEncode(org.apache.commons.codec.language.RefinedSoundexTest) (0 ms)</li><li>org.apache.commons.codec.language.RefinedSoundexTest.testLocaleIndependence(org.apache.commons.codec.language.RefinedSoundexTest) (1 ms)</li><li>org.apache.commons.codec.language.RefinedSoundexTest.testEncodeEmpty(org.apache.commons.codec.language.RefinedSoundexTest) (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.7.3
+
+</body>
+</html>

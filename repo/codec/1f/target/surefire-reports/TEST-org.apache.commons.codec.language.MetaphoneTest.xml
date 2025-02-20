@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="34" failures="0" name="org.apache.commons.codec.language.MetaphoneTest" time="0.028" errors="0" skipped="0">
+<testsuite tests="34" failures="0" name="org.apache.commons.codec.language.MetaphoneTest" time="0.023" errors="0" skipped="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="localRepository" value="/root/.m2/repository"/>
-    <property name="env.NVM_BIN" value="/root/.nvm/versions/node/v20.18.1/bin"/>
+    <property name="env.NVM_BIN" value="/root/.nvm/versions/node/v18.19.0/bin"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="env.NVM_INC" value="/root/.nvm/versions/node/v20.18.1/include/node"/>
+    <property name="env.NVM_INC" value="/root/.nvm/versions/node/v18.19.0/include/node"/>
     <property name="env.P9K_TTY" value="old"/>
     <property name="os.name" value="Linux"/>
     <property name="env.PWD" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
     <property name="env.LANG" value="C.UTF-8"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.runtime.version" value="11.0.2+9"/>
-    <property name="env._P9K_TTY" value="/dev/pts/6"/>
+    <property name="env._P9K_TTY" value="/dev/pts/5"/>
     <property name="env.NVM_CD_FLAGS" value="-q"/>
     <property name="env.DISPLAY" value=":0"/>
     <property name="env.PYENV_SHELL" value="zsh"/>
@@ -23,15 +23,14 @@
     <property name="env.USER" value="root"/>
     <property name="env.SHELL" value="/usr/bin/zsh"/>
     <property name="env.ZPFX" value="/root/.local/share/zinit/polaris"/>
-    <property name="env.VSCODE_NONCE" value="a673e5c7-2116-4d19-be88-a4c759d00130"/>
-    <property name="env.PATH" value="/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/shims:/root/.pyenv/bin:/root/.local/bin:/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/bin/remote-cli:/root/.sdkman/candidates/java/current/bin:/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/bin:/root/.nvm/versions/node/v20.18.1/bin:/root/.local/bin:/root/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-11.0.14.101-hotspot/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.2.8-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/nodejs/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/FileBot/:/mnt/c/Program Files/Calibre2/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/Nathan/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/Nathan/AppData/Local/BCML/bin:/mnt/c/Users/Nathan/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Multipass/bin:/mnt/c/Users/Nathan/.dotnet/tools:/mnt/c/Program Files/Java/scripts:/mnt/c/Users/Nathan/AppData/Roaming/npm:/mnt/c/php:/mnt/c/Users/Nathan/flutter/bin:/mnt/c/Users/Nathan/AppData/Local/Pub/Cache/bin:/mnt/c/Users/Nathan/AppData/Local/Android/Sdk/platform-tools/adb.exe:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/bin:/root/.fzf/bin:/opt/defects4j/framework/bin:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/bin:/opt/defects4j/framework/bin"/>
+    <property name="env.VSCODE_NONCE" value="ed2a8a69-788f-4cc8-96d6-2cb981288f28"/>
+    <property name="env.PATH" value="/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/shims:/root/.pyenv/bin:/root/.local/bin:/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/bin/remote-cli:/root/.sdkman/candidates/java/11.0.2-oracle/bin:/root/.pyenv/plugins/pyenv-virtualenv/shims:/root/.pyenv/bin:/root/.nvm/versions/node/v18.19.0/bin:/root/.local/bin:/root/.local/share/zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/National Instruments/Shared/OpenVINO/:/mnt/c/Program Files/Java/jdk-17/bin:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Eclipse Adoptium/jdk-17.0.5.8-hotspot/bin:/mnt/c/Program Files/Eclipse Adoptium/jdk-8.0.345.1-hotspot/bin:/mnt/c/Program Files/Eclipse Adoptium/jre-8.0.345.1-hotspot/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/PuTTY/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/nodejs/:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Strawberry/c/bin:/mnt/c/Strawberry/perl/site/bin:/mnt/c/Strawberry/perl/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Graphviz/bin:/mnt/c/Program Files/doxygen/bin:/mnt/c/Users/natha/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/natha/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/natha/AppData/Local/Programs/Python/Python311/Scripts/:/mnt/c/Users/natha/AppData/Local/Programs/Python/Python311/:/mnt/c/Users/natha/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/natha/AppData/Roaming/npm:/mnt/c/Users/natha/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/natha/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/c/Program Files/swipl/bin:/mnt/c/Users/natha/flutter/bin:/mnt/c/Users/natha/AppData/Local/Pub/Cache/bin:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/root/.fzf/bin:/opt/defects4j/framework/bin:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/go/bin:/opt/defects4j/framework/bin"/>
     <property name="user.language" value="en"/>
     <property name="sun.boot.library.path" value="/java/jdk-11.0.2/lib"/>
     <property name="classworlds.conf" value="/usr/share/maven/bin/m2.conf"/>
     <property name="env.VSCODE_GIT_ASKPASS_MAIN" value="/root/.vscode-server/bin/cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/extensions/git/dist/askpass-main.js"/>
     <property name="env.HOSTTYPE" value="x86_64"/>
-    <property name="env.PYENV_ROOT" value="/root/.pyenv"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.version" value="11.0.2"/>
     <property name="user.timezone" value=""/>
     <property name="env.ZDOTDIR" value="/root"/>
@@ -40,7 +39,7 @@
     <property name="sun.arch.data.model" value="64"/>
     <property name="env.PULSE_SERVER" value="unix:/mnt/wslg/PulseServer"/>
     <property name="env.VSCODE_INJECTION" value="1"/>
-    <property name="env.NAME" value="Nathan"/>
+    <property name="env.NAME" value="AsusSwiftX14"/>
     <property name="env.P9K_SSH" value="0"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -56,14 +55,14 @@
     <property name="os.version" value="5.15.150.1-microsoft-standard-WSL2"/>
     <property name="env.LOGNAME" value="root"/>
     <property name="env.TERM_PROGRAM_VERSION" value="1.96.4"/>
-    <property name="env.WSLENV" value="VSCODE_WSL_EXT_LOCATION/up"/>
-    <property name="env.WSL_INTEROP" value="/run/WSL/2304_interop"/>
+    <property name="env.WSLENV" value="VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up"/>
+    <property name="env.WSL_INTEROP" value="/run/WSL/60910_interop"/>
     <property name="path.separator" value=":"/>
     <property name="java.vm.version" value="11.0.2+9"/>
     <property name="env.PYENV_VIRTUALENV_INIT" value="1"/>
     <property name="env.VSCODE_GIT_IPC_HANDLE" value="/run/user/0/vscode-git-b41baf7797.sock"/>
-    <property name="env.VSCODE_IPC_HOOK_CLI" value="/run/user/0/vscode-ipc-8aa15146-d2d3-4232-a4e6-fd4eb0e5472d.sock"/>
-    <property name="env.JAVA_HOME" value="/root/.sdkman/candidates/java/current"/>
+    <property name="env.VSCODE_IPC_HOOK_CLI" value="/run/user/0/vscode-ipc-5be6bcc0-7798-4b01-a991-78ad799b3316.sock"/>
+    <property name="env.JAVA_HOME" value="/root/.sdkman/candidates/java/11.0.2-oracle"/>
     <property name="env.FZF_DEFAULT_OPTS" value="--height=~10% --bind left:preview-up,right:preview-down"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
     <property name="env.TERM" value="xterm-256color"/>
@@ -94,7 +93,7 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="env.HOME" value="/root"/>
-    <property name="env._P9K_SSH_TTY" value="/dev/pts/6"/>
+    <property name="env._P9K_SSH_TTY" value="/dev/pts/5"/>
     <property name="surefire.test.class.path" value="/code/concordia/SOEN-345-Lab/repo/codec/1f/target/test-classes:/code/concordia/SOEN-345-Lab/repo/codec/1f/target/classes:/root/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/root/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="maven.multiModuleProjectDirectory" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
@@ -120,19 +119,19 @@
     <property name="env.WSL_DISTRO_NAME" value="Ubuntu"/>
     <property name="env.MAVEN_PROJECTBASEDIR" value="/code/concordia/SOEN-345-Lab/repo/codec/1f"/>
   </properties>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testTranslateOfSCHAndCH" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testTranslateOfSCHAndCH" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testTranslateToJOfDGEOrDGIOrDGY" time="0"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testTCH" time="0"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testTCH" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testWhy" time="0"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqual1" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqual1" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqual2" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testPHTOF" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testDiscardOfSilentGN" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualParis" time="0"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualPeter" time="0.002"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualPeter" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualSusan" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualWhite" time="0.001"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualXalan" time="0.001"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualXalan" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualAlbert" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualKnight" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testMetaphone" time="0"/>
@@ -143,14 +142,14 @@
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testExceedLength" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testWordEndingInMB" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualAero" time="0"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualGary" time="0.011"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualJohn" time="0.004"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualGary" time="0.009"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualJohn" time="0.002"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualMary" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testDiscardOfSilentHAfterG" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testWordsWithCIA" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testDiscardOfSCEOrSCIOrSCY" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testIsMetaphoneEqualRay" time="0"/>
-  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testEncodeWithInvalidObject" time="0"/>
+  <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testEncodeWithInvalidObject" time="0.001"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testEncodeNull" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testEncodeEmpty" time="0"/>
   <testcase classname="org.apache.commons.codec.language.MetaphoneTest" name="testLocaleIndependence" time="0"/>
