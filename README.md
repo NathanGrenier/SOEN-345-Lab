@@ -8,6 +8,7 @@ Concordia's SOEN 345 Lab Project
 | Name           | Student ID | Email                     |
 | -------------- | ---------- | ------------------------- |
 | Nathan Grenier | 40250986   | nathangrenier01@gmail.com |
+| Alvaro Gonzalez | 40153040  | alvarodavidglx@hotmail.com|
 
 ## Pitest Configuration
 
