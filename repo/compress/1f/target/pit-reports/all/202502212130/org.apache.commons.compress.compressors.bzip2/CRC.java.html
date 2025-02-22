@@ -1,0 +1,2475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>CRC.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Licensed to the Apache Software Foundation (ASF) under one</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * or more contributor license agreements.  See the NOTICE file</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * distributed with this work for additional information</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * regarding copyright ownership.  The ASF licenses this file</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * to you under the Apache License, Version 2.0 (the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#34;License&#34;); you may not use this file except in compliance</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * with the License.  You may obtain a copy of the License at</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * http://www.apache.org/licenses/LICENSE-2.0</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Unless required by applicable law or agreed to in writing,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * software distributed under the License is distributed on an</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#34;AS IS&#34; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * KIND, either express or implied.  See the License for the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * specific language governing permissions and limitations</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * under the License.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package org.apache.commons.compress.compressors.bzip2;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * A simple class the hold and calculate the CRC for sanity checking of the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * data.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>class CRC {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static final int crc32Table[] = {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x00000000, 0x04c11db7, 0x09823b6e, 0x0d4326d9,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x130476dc, 0x17c56b6b, 0x1a864db2, 0x1e475005,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x2608edb8, 0x22c9f00f, 0x2f8ad6d6, 0x2b4bcb61,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x350c9b64, 0x31cd86d3, 0x3c8ea00a, 0x384fbdbd,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x4c11db70, 0x48d0c6c7, 0x4593e01e, 0x4152fda9,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x5f15adac, 0x5bd4b01b, 0x569796c2, 0x52568b75,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x6a1936c8, 0x6ed82b7f, 0x639b0da6, 0x675a1011,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x791d4014, 0x7ddc5da3, 0x709f7b7a, 0x745e66cd,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x9823b6e0, 0x9ce2ab57, 0x91a18d8e, 0x95609039,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x8b27c03c, 0x8fe6dd8b, 0x82a5fb52, 0x8664e6e5,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xbe2b5b58, 0xbaea46ef, 0xb7a96036, 0xb3687d81,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xad2f2d84, 0xa9ee3033, 0xa4ad16ea, 0xa06c0b5d,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xd4326d90, 0xd0f37027, 0xddb056fe, 0xd9714b49,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xc7361b4c, 0xc3f706fb, 0xceb42022, 0xca753d95,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xf23a8028, 0xf6fb9d9f, 0xfbb8bb46, 0xff79a6f1,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xe13ef6f4, 0xe5ffeb43, 0xe8bccd9a, 0xec7dd02d,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x34867077, 0x30476dc0, 0x3d044b19, 0x39c556ae,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x278206ab, 0x23431b1c, 0x2e003dc5, 0x2ac12072,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x128e9dcf, 0x164f8078, 0x1b0ca6a1, 0x1fcdbb16,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x018aeb13, 0x054bf6a4, 0x0808d07d, 0x0cc9cdca,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x7897ab07, 0x7c56b6b0, 0x71159069, 0x75d48dde,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x6b93dddb, 0x6f52c06c, 0x6211e6b5, 0x66d0fb02,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x5e9f46bf, 0x5a5e5b08, 0x571d7dd1, 0x53dc6066,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x4d9b3063, 0x495a2dd4, 0x44190b0d, 0x40d816ba,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xaca5c697, 0xa864db20, 0xa527fdf9, 0xa1e6e04e,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xbfa1b04b, 0xbb60adfc, 0xb6238b25, 0xb2e29692,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x8aad2b2f, 0x8e6c3698, 0x832f1041, 0x87ee0df6,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x99a95df3, 0x9d684044, 0x902b669d, 0x94ea7b2a,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xe0b41de7, 0xe4750050, 0xe9362689, 0xedf73b3e,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xf3b06b3b, 0xf771768c, 0xfa325055, 0xfef34de2,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xc6bcf05f, 0xc27dede8, 0xcf3ecb31, 0xcbffd686,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xd5b88683, 0xd1799b34, 0xdc3abded, 0xd8fba05a,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x690ce0ee, 0x6dcdfd59, 0x608edb80, 0x644fc637,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x7a089632, 0x7ec98b85, 0x738aad5c, 0x774bb0eb,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x4f040d56, 0x4bc510e1, 0x46863638, 0x42472b8f,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x5c007b8a, 0x58c1663d, 0x558240e4, 0x51435d53,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x251d3b9e, 0x21dc2629, 0x2c9f00f0, 0x285e1d47,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x36194d42, 0x32d850f5, 0x3f9b762c, 0x3b5a6b9b,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x0315d626, 0x07d4cb91, 0x0a97ed48, 0x0e56f0ff,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x1011a0fa, 0x14d0bd4d, 0x19939b94, 0x1d528623,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xf12f560e, 0xf5ee4bb9, 0xf8ad6d60, 0xfc6c70d7,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xe22b20d2, 0xe6ea3d65, 0xeba91bbc, 0xef68060b,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xd727bbb6, 0xd3e6a601, 0xdea580d8, 0xda649d6f,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xc423cd6a, 0xc0e2d0dd, 0xcda1f604, 0xc960ebb3,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xbd3e8d7e, 0xb9ff90c9, 0xb4bcb610, 0xb07daba7,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xae3afba2, 0xaafbe615, 0xa7b8c0cc, 0xa379dd7b,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x9b3660c6, 0x9ff77d71, 0x92b45ba8, 0x9675461f,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x8832161a, 0x8cf30bad, 0x81b02d74, 0x857130c3,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x5d8a9099, 0x594b8d2e, 0x5408abf7, 0x50c9b640,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x4e8ee645, 0x4a4ffbf2, 0x470cdd2b, 0x43cdc09c,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x7b827d21, 0x7f436096, 0x7200464f, 0x76c15bf8,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x68860bfd, 0x6c47164a, 0x61043093, 0x65c52d24,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x119b4be9, 0x155a565e, 0x18197087, 0x1cd86d30,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x029f3d35, 0x065e2082, 0x0b1d065b, 0x0fdc1bec,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x3793a651, 0x3352bbe6, 0x3e119d3f, 0x3ad08088,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x2497d08d, 0x2056cd3a, 0x2d15ebe3, 0x29d4f654,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xc5a92679, 0xc1683bce, 0xcc2b1d17, 0xc8ea00a0,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xd6ad50a5, 0xd26c4d12, 0xdf2f6bcb, 0xdbee767c,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xe3a1cbc1, 0xe760d676, 0xea23f0af, 0xeee2ed18,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xf0a5bd1d, 0xf464a0aa, 0xf9278673, 0xfde69bc4,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x89b8fd09, 0x8d79e0be, 0x803ac667, 0x84fbdbd0,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0x9abc8bd5, 0x9e7d9662, 0x933eb0bb, 0x97ffad0c,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xafb010b1, 0xab710d06, 0xa6322bdf, 0xa2f33668,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        0xbcb4666d, 0xb8757bda, 0xb5365d03, 0xb1f740b4</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    };</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    CRC() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_94'/>
+94
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_94'>1</a>
+<span>
+1. &#60;init&#62; : removed call to org/apache/commons/compress/compressors/bzip2/CRC::initialiseCRC &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;        initialiseCRC();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    void initialiseCRC() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_98'/>
+98
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_98'>7</a>
+<span>
+1. initialiseCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+2. initialiseCRC : Removed assignment to member variable globalCrc &rarr; KILLED<br/>
+3. initialiseCRC : Substituted -1 with 1 &rarr; KILLED<br/>
+4. initialiseCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+5. initialiseCRC : Substituted -1 with 1 &rarr; KILLED<br/>
+6. initialiseCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+7. initialiseCRC : Substituted -1 with -2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;        globalCrc = 0xffffffff;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    int getFinalCRC() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_102'/>
+102
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_102'>14</a>
+<span>
+1. getFinalCRC : Incremented (a++) integer field globalCrc &rarr; SURVIVED<br/>
+2. getFinalCRC : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+3. getFinalCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+4. getFinalCRC : Replaced XOR with AND &rarr; KILLED<br/>
+5. getFinalCRC : replaced int return with 0 for org/apache/commons/compress/compressors/bzip2/CRC::getFinalCRC &rarr; KILLED<br/>
+6. getFinalCRC : Negated integer field globalCrc &rarr; KILLED<br/>
+7. getFinalCRC : Substituted -1 with 1 &rarr; KILLED<br/>
+8. getFinalCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+9. getFinalCRC : Substituted -1 with 1 &rarr; KILLED<br/>
+10. getFinalCRC : Substituted -1 with 0 &rarr; KILLED<br/>
+11. getFinalCRC : Substituted -1 with -2 &rarr; KILLED<br/>
+12. getFinalCRC : Decremented (a--) integer field globalCrc &rarr; KILLED<br/>
+13. getFinalCRC : Incremented (++a) integer field globalCrc &rarr; KILLED<br/>
+14. getFinalCRC : Decremented (--a) integer fieldglobalCrc &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;        return ~globalCrc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    int getGlobalCRC() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_106'/>
+106
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_106'>7</a>
+<span>
+1. getGlobalCRC : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NO_COVERAGE<br/>
+2. getGlobalCRC : replaced int return with 0 for org/apache/commons/compress/compressors/bzip2/CRC::getGlobalCRC &rarr; NO_COVERAGE<br/>
+3. getGlobalCRC : Negated integer field globalCrc &rarr; NO_COVERAGE<br/>
+4. getGlobalCRC : Incremented (a++) integer field globalCrc &rarr; NO_COVERAGE<br/>
+5. getGlobalCRC : Decremented (a--) integer field globalCrc &rarr; NO_COVERAGE<br/>
+6. getGlobalCRC : Incremented (++a) integer field globalCrc &rarr; NO_COVERAGE<br/>
+7. getGlobalCRC : Decremented (--a) integer fieldglobalCrc &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;        return globalCrc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    void setGlobalCRC(int newCrc) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_110'/>
+110
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_110'>6</a>
+<span>
+1. setGlobalCRC : Removed assignment to member variable globalCrc &rarr; NO_COVERAGE<br/>
+2. setGlobalCRC : Negated integer local variable number 1 &rarr; NO_COVERAGE<br/>
+3. setGlobalCRC : Incremented (a++) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+4. setGlobalCRC : Decremented (a--) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+5. setGlobalCRC : Incremented (++a) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+6. setGlobalCRC : Decremented (--a) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;        globalCrc = newCrc;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    void updateCRC(int inCh) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_114'/>
+114
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_114'>19</a>
+<span>
+1. updateCRC : Incremented (a++) integer local variable number 1 &rarr; SURVIVED<br/>
+2. updateCRC : Substituted 24 with 25 &rarr; KILLED<br/>
+3. updateCRC : Replaced Shift Right with Shift Left &rarr; KILLED<br/>
+4. updateCRC : Replaced XOR with AND &rarr; KILLED<br/>
+5. updateCRC : Negated integer field globalCrc &rarr; KILLED<br/>
+6. updateCRC : Negated integer local variable number 1 &rarr; KILLED<br/>
+7. updateCRC : Substituted 24 with 1 &rarr; KILLED<br/>
+8. updateCRC : Substituted 24 with 0 &rarr; KILLED<br/>
+9. updateCRC : Substituted 24 with -1 &rarr; KILLED<br/>
+10. updateCRC : Substituted 24 with -24 &rarr; KILLED<br/>
+11. updateCRC : Substituted 24 with 25 &rarr; KILLED<br/>
+12. updateCRC : Substituted 24 with 23 &rarr; KILLED<br/>
+13. updateCRC : Incremented (a++) integer field globalCrc &rarr; KILLED<br/>
+14. updateCRC : Decremented (a--) integer field globalCrc &rarr; KILLED<br/>
+15. updateCRC : Decremented (a--) integer local variable number 1 &rarr; KILLED<br/>
+16. updateCRC : Incremented (++a) integer field globalCrc &rarr; KILLED<br/>
+17. updateCRC : Incremented (++a) integer local variable number 1 &rarr; KILLED<br/>
+18. updateCRC : Decremented (--a) integer fieldglobalCrc &rarr; KILLED<br/>
+19. updateCRC : Decremented (--a) integer local variable number 1 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;        int temp = (globalCrc &#62;&#62; 24) ^ inCh;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_115'/>
+115
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_115'>14</a>
+<span>
+1. updateCRC : changed conditional boundary &rarr; KILLED<br/>
+2. updateCRC : negated conditional &rarr; KILLED<br/>
+3. updateCRC : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+4. updateCRC : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+5. updateCRC : Negated integer local variable number 2 &rarr; KILLED<br/>
+6. updateCRC : greater or equal to less than &rarr; KILLED<br/>
+7. updateCRC : greater or equal to less or equal &rarr; KILLED<br/>
+8. updateCRC : greater or equal to greater than &rarr; KILLED<br/>
+9. updateCRC : greater or equal to equal &rarr; KILLED<br/>
+10. updateCRC : greater or equal to not equal &rarr; KILLED<br/>
+11. updateCRC : Incremented (a++) integer local variable number 2 &rarr; KILLED<br/>
+12. updateCRC : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+13. updateCRC : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+14. updateCRC : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>&#9;        if (temp &#60; 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_116'/>
+116
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_116'>19</a>
+<span>
+1. updateCRC : Incremented (a++) integer local variable number 2 &rarr; SURVIVED<br/>
+2. updateCRC : Decremented (a--) integer local variable number 2 &rarr; SURVIVED<br/>
+3. updateCRC : Substituted 256 with 257 &rarr; KILLED<br/>
+4. updateCRC : Replaced integer addition with subtraction &rarr; KILLED<br/>
+5. updateCRC : Negated integer local variable number 2 &rarr; KILLED<br/>
+6. updateCRC : Replaced integer operation with first member &rarr; KILLED<br/>
+7. updateCRC : Replaced integer operation by second member &rarr; KILLED<br/>
+8. updateCRC : Replaced integer addition with subtraction &rarr; KILLED<br/>
+9. updateCRC : Replaced integer addition with multiplication &rarr; KILLED<br/>
+10. updateCRC : Replaced integer addition with division &rarr; KILLED<br/>
+11. updateCRC : Replaced integer addition with modulus &rarr; KILLED<br/>
+12. updateCRC : Substituted 256 with 1 &rarr; KILLED<br/>
+13. updateCRC : Substituted 256 with 0 &rarr; KILLED<br/>
+14. updateCRC : Substituted 256 with -1 &rarr; KILLED<br/>
+15. updateCRC : Substituted 256 with -256 &rarr; KILLED<br/>
+16. updateCRC : Substituted 256 with 257 &rarr; KILLED<br/>
+17. updateCRC : Substituted 256 with 255 &rarr; KILLED<br/>
+18. updateCRC : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+19. updateCRC : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;            temp = 256 + temp;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_118'/>
+118
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_118'>25</a>
+<span>
+1. updateCRC : Incremented (a++) integer field globalCrc &rarr; SURVIVED<br/>
+2. updateCRC : Incremented (a++) integer local variable number 2 &rarr; SURVIVED<br/>
+3. updateCRC : Decremented (a--) integer field globalCrc &rarr; SURVIVED<br/>
+4. updateCRC : Substituted 8 with 9 &rarr; KILLED<br/>
+5. updateCRC : Replaced Shift Left with Shift Right &rarr; KILLED<br/>
+6. updateCRC : Replaced XOR with AND &rarr; KILLED<br/>
+7. updateCRC : Removed assignment to member variable globalCrc &rarr; KILLED<br/>
+8. updateCRC : Negated integer field globalCrc &rarr; KILLED<br/>
+9. updateCRC : Negated integer local variable number 2 &rarr; KILLED<br/>
+10. updateCRC : Negated integer array field &rarr; KILLED<br/>
+11. updateCRC : Substituted 8 with 1 &rarr; KILLED<br/>
+12. updateCRC : Substituted 8 with 0 &rarr; KILLED<br/>
+13. updateCRC : Substituted 8 with -1 &rarr; KILLED<br/>
+14. updateCRC : Substituted 8 with -8 &rarr; KILLED<br/>
+15. updateCRC : Substituted 8 with 9 &rarr; KILLED<br/>
+16. updateCRC : Substituted 8 with 7 &rarr; KILLED<br/>
+17. updateCRC : Incremented (a++) integer array field &rarr; KILLED<br/>
+18. updateCRC : Decremented (a--) integer local variable number 2 &rarr; KILLED<br/>
+19. updateCRC : Decremented (a--) integer array field &rarr; KILLED<br/>
+20. updateCRC : Incremented (++a) integer field globalCrc &rarr; KILLED<br/>
+21. updateCRC : Incremented (++a) integer local variable number 2 &rarr; KILLED<br/>
+22. updateCRC : Incremented (++a) integer array field &rarr; KILLED<br/>
+23. updateCRC : Decremented (--a) integer fieldglobalCrc &rarr; KILLED<br/>
+24. updateCRC : Decremented (--a) integer local variable number 2 &rarr; KILLED<br/>
+25. updateCRC : Decremented (--a) integer array field &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>&#9;        globalCrc = (globalCrc &#60;&#60; 8) ^ CRC.crc32Table[temp];</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    void updateCRC(int inCh, int repeat) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_122'/>
+122
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_122'>5</a>
+<span>
+1. updateCRC : Negated integer field globalCrc &rarr; NO_COVERAGE<br/>
+2. updateCRC : Incremented (a++) integer field globalCrc &rarr; NO_COVERAGE<br/>
+3. updateCRC : Decremented (a--) integer field globalCrc &rarr; NO_COVERAGE<br/>
+4. updateCRC : Incremented (++a) integer field globalCrc &rarr; NO_COVERAGE<br/>
+5. updateCRC : Decremented (--a) integer fieldglobalCrc &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;        int globalCrcShadow = this.globalCrc;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_123'/>
+123
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_123'>16</a>
+<span>
+1. updateCRC : changed conditional boundary &rarr; NO_COVERAGE<br/>
+2. updateCRC : Changed increment from -1 to 1 &rarr; NO_COVERAGE<br/>
+3. updateCRC : negated conditional &rarr; NO_COVERAGE<br/>
+4. updateCRC : removed conditional - replaced comparison check with false &rarr; NO_COVERAGE<br/>
+5. updateCRC : removed conditional - replaced comparison check with true &rarr; NO_COVERAGE<br/>
+6. updateCRC : Removed increment -1 &rarr; NO_COVERAGE<br/>
+7. updateCRC : Negated integer local variable number 2 &rarr; NO_COVERAGE<br/>
+8. updateCRC : Less or equal to less than &rarr; NO_COVERAGE<br/>
+9. updateCRC : Less or equal to greater than &rarr; NO_COVERAGE<br/>
+10. updateCRC : Less or equal to greater or equal &rarr; NO_COVERAGE<br/>
+11. updateCRC : Less or equal to equal &rarr; NO_COVERAGE<br/>
+12. updateCRC : Less or equal to not equal &rarr; NO_COVERAGE<br/>
+13. updateCRC : Incremented (a++) integer local variable number 2 &rarr; NO_COVERAGE<br/>
+14. updateCRC : Decremented (a--) integer local variable number 2 &rarr; NO_COVERAGE<br/>
+15. updateCRC : Incremented (++a) integer local variable number 2 &rarr; NO_COVERAGE<br/>
+16. updateCRC : Decremented (--a) integer local variable number 2 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;        while (repeat-- &#62; 0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_124'/>
+124
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_124'>19</a>
+<span>
+1. updateCRC : Substituted 24 with 25 &rarr; NO_COVERAGE<br/>
+2. updateCRC : Replaced Shift Right with Shift Left &rarr; NO_COVERAGE<br/>
+3. updateCRC : Replaced XOR with AND &rarr; NO_COVERAGE<br/>
+4. updateCRC : Negated integer local variable number 3 &rarr; NO_COVERAGE<br/>
+5. updateCRC : Negated integer local variable number 1 &rarr; NO_COVERAGE<br/>
+6. updateCRC : Substituted 24 with 1 &rarr; NO_COVERAGE<br/>
+7. updateCRC : Substituted 24 with 0 &rarr; NO_COVERAGE<br/>
+8. updateCRC : Substituted 24 with -1 &rarr; NO_COVERAGE<br/>
+9. updateCRC : Substituted 24 with -24 &rarr; NO_COVERAGE<br/>
+10. updateCRC : Substituted 24 with 25 &rarr; NO_COVERAGE<br/>
+11. updateCRC : Substituted 24 with 23 &rarr; NO_COVERAGE<br/>
+12. updateCRC : Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+13. updateCRC : Incremented (a++) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+14. updateCRC : Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+15. updateCRC : Decremented (a--) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+16. updateCRC : Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+17. updateCRC : Incremented (++a) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+18. updateCRC : Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+19. updateCRC : Decremented (--a) integer local variable number 1 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;            int temp = (globalCrcShadow &#62;&#62; 24) ^ inCh;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_125'/>
+125
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_125'>27</a>
+<span>
+1. updateCRC : changed conditional boundary &rarr; NO_COVERAGE<br/>
+2. updateCRC : Substituted 8 with 9 &rarr; NO_COVERAGE<br/>
+3. updateCRC : Replaced Shift Left with Shift Right &rarr; NO_COVERAGE<br/>
+4. updateCRC : negated conditional &rarr; NO_COVERAGE<br/>
+5. updateCRC : removed conditional - replaced comparison check with false &rarr; NO_COVERAGE<br/>
+6. updateCRC : removed conditional - replaced comparison check with true &rarr; NO_COVERAGE<br/>
+7. updateCRC : Negated integer local variable number 3 &rarr; NO_COVERAGE<br/>
+8. updateCRC : Negated integer local variable number 4 &rarr; NO_COVERAGE<br/>
+9. updateCRC : Substituted 8 with 1 &rarr; NO_COVERAGE<br/>
+10. updateCRC : Substituted 8 with 0 &rarr; NO_COVERAGE<br/>
+11. updateCRC : Substituted 8 with -1 &rarr; NO_COVERAGE<br/>
+12. updateCRC : Substituted 8 with -8 &rarr; NO_COVERAGE<br/>
+13. updateCRC : Substituted 8 with 9 &rarr; NO_COVERAGE<br/>
+14. updateCRC : Substituted 8 with 7 &rarr; NO_COVERAGE<br/>
+15. updateCRC : Less than to less or equal &rarr; NO_COVERAGE<br/>
+16. updateCRC : Less than to greater than &rarr; NO_COVERAGE<br/>
+17. updateCRC : Less than to greater or equal &rarr; NO_COVERAGE<br/>
+18. updateCRC : Less than to equal &rarr; NO_COVERAGE<br/>
+19. updateCRC : Less than to not equal &rarr; NO_COVERAGE<br/>
+20. updateCRC : Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+21. updateCRC : Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+22. updateCRC : Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+23. updateCRC : Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+24. updateCRC : Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+25. updateCRC : Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+26. updateCRC : Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+27. updateCRC : Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;            globalCrcShadow = (globalCrcShadow &#60;&#60; 8) ^ crc32Table[(temp &#62;= 0)</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_126'/>
+126
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_126'>5</a>
+<span>
+1. updateCRC : Negated integer local variable number 4 &rarr; NO_COVERAGE<br/>
+2. updateCRC : Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+3. updateCRC : Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+4. updateCRC : Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+5. updateCRC : Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;                                                      ? temp</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_127'/>
+127
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_127'>25</a>
+<span>
+1. updateCRC : Substituted 256 with 257 &rarr; NO_COVERAGE<br/>
+2. updateCRC : Replaced integer addition with subtraction &rarr; NO_COVERAGE<br/>
+3. updateCRC : Replaced XOR with AND &rarr; NO_COVERAGE<br/>
+4. updateCRC : Negated integer local variable number 4 &rarr; NO_COVERAGE<br/>
+5. updateCRC : Negated integer array field &rarr; NO_COVERAGE<br/>
+6. updateCRC : Replaced integer operation with first member &rarr; NO_COVERAGE<br/>
+7. updateCRC : Replaced integer operation by second member &rarr; NO_COVERAGE<br/>
+8. updateCRC : Replaced integer addition with subtraction &rarr; NO_COVERAGE<br/>
+9. updateCRC : Replaced integer addition with multiplication &rarr; NO_COVERAGE<br/>
+10. updateCRC : Replaced integer addition with division &rarr; NO_COVERAGE<br/>
+11. updateCRC : Replaced integer addition with modulus &rarr; NO_COVERAGE<br/>
+12. updateCRC : Substituted 256 with 1 &rarr; NO_COVERAGE<br/>
+13. updateCRC : Substituted 256 with 0 &rarr; NO_COVERAGE<br/>
+14. updateCRC : Substituted 256 with -1 &rarr; NO_COVERAGE<br/>
+15. updateCRC : Substituted 256 with -256 &rarr; NO_COVERAGE<br/>
+16. updateCRC : Substituted 256 with 257 &rarr; NO_COVERAGE<br/>
+17. updateCRC : Substituted 256 with 255 &rarr; NO_COVERAGE<br/>
+18. updateCRC : Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+19. updateCRC : Incremented (a++) integer array field &rarr; NO_COVERAGE<br/>
+20. updateCRC : Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+21. updateCRC : Decremented (a--) integer array field &rarr; NO_COVERAGE<br/>
+22. updateCRC : Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+23. updateCRC : Incremented (++a) integer array field &rarr; NO_COVERAGE<br/>
+24. updateCRC : Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE<br/>
+25. updateCRC : Decremented (--a) integer array field &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;                                                      : (temp + 256)];</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;        }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_129'/>
+129
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_129'>6</a>
+<span>
+1. updateCRC : Removed assignment to member variable globalCrc &rarr; NO_COVERAGE<br/>
+2. updateCRC : Negated integer local variable number 3 &rarr; NO_COVERAGE<br/>
+3. updateCRC : Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+4. updateCRC : Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+5. updateCRC : Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+6. updateCRC : Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE<br/>
+
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class='survived'>&#9;        this.globalCrc = globalCrcShadow;</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>&#9;    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>&#9;    private int globalCrc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@72a365ec_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_94'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>none</span></span> removed call to org/apache/commons/compress/compressors/bzip2/CRC::initialiseCRC &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_98'>98</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_98'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Removed assignment to member variable globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>initialiseCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with -2 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_102'>102</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_102'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced XOR with AND &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> replaced int return with 0 for org/apache/commons/compress/compressors/bzip2/CRC::getFinalCRC &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted -1 with -2 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field globalCrc &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>getFinalCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer fieldglobalCrc &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_106'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> replaced int return with 0 for org/apache/commons/compress/compressors/bzip2/CRC::getGlobalCRC &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> Negated integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>getGlobalCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer fieldglobalCrc &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_110'>110</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_110'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Removed assignment to member variable globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>setGlobalCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 1 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with 25 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced Shift Right with Shift Left &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced XOR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with -24 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with 25 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 24 with 23 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (a++) integer field globalCrc &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 1 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer local variable number 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer fieldglobalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer local variable number 1 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_115'>115</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_115'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> greater or equal to less than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> greater or equal to less or equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> greater or equal to greater than &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> greater or equal to equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> greater or equal to not equal &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (a++) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_116'>116</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_116'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with 257 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer operation with first member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer operation by second member &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer addition with multiplication &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer addition with division &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced integer addition with modulus &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with -256 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with 257 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 256 with 255 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 2 &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 2 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_118'>118</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_118'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with 9 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced Shift Left with Shift Right &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Replaced XOR with AND &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Removed assignment to member variable globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Negated integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with 0 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with -8 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with 9 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Substituted 8 with 7 &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field globalCrc &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 2 &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (a++) integer array field &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field globalCrc &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (a--) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer field globalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Incremented (++a) integer array field &rarr; KILLED</p> <p class='KILLED'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer fieldglobalCrc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer local variable number 2 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase)</span></span> Decremented (--a) integer array field &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_122'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer field globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer fieldglobalCrc &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_123'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Changed increment from -1 to 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with false &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Removed increment -1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 2 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less or equal to less than &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less or equal to greater than &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less or equal to greater or equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less or equal to equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less or equal to not equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 2 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 2 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 2 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 2 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_124'>124</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_124'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with 25 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced Shift Right with Shift Left &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced XOR with AND &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with 0 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with -1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with -24 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with 25 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 24 with 23 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 1 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_125'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with 9 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced Shift Left with Shift Right &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with false &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> removed conditional - replaced comparison check with true &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with 0 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with -1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with -8 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with 9 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 8 with 7 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less than to less or equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less than to greater than &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less than to greater or equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less than to equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Less than to not equal &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>26.<span><b>26</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>27.<span><b>27</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_126'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_127'>127</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_127'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with 257 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer addition with subtraction &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced XOR with AND &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer array field &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer operation with first member &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer operation by second member &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer addition with subtraction &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer addition with multiplication &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer addition with division &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Replaced integer addition with modulus &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with 1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with 0 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with -1 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with -256 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with 257 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Substituted 256 with 255 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer array field &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>21.<span><b>21</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer array field &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>22.<span><b>22</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>23.<span><b>23</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer array field &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>24.<span><b>24</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 4 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>25.<span><b>25</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer array field &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@72a365ec_129'>129</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@72a365ec_129'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Removed assignment to member variable globalCrc &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Negated integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (a++) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (a--) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Incremented (++a) integer local variable number 3 &rarr; NO_COVERAGE</p> <p class='NO_COVERAGE'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>updateCRC<br/><b>Killed by : </b>none</span></span> Decremented (--a) integer local variable number 3 &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>ABS</li>
+<li class='mutator'>AOD1</li>
+<li class='mutator'>AOD2</li>
+<li class='mutator'>AOR1</li>
+<li class='mutator'>AOR2</li>
+<li class='mutator'>AOR3</li>
+<li class='mutator'>AOR4</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>CRCR1</li>
+<li class='mutator'>CRCR2</li>
+<li class='mutator'>CRCR3</li>
+<li class='mutator'>CRCR4</li>
+<li class='mutator'>CRCR5</li>
+<li class='mutator'>CRCR6</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INLINE_CONSTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>OBBN1</li>
+<li class='mutator'>OBBN2</li>
+<li class='mutator'>OBBN3</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>ROR1</li>
+<li class='mutator'>ROR2</li>
+<li class='mutator'>ROR3</li>
+<li class='mutator'>ROR4</li>
+<li class='mutator'>ROR5</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>UOI1</li>
+<li class='mutator'>UOI2</li>
+<li class='mutator'>UOI3</li>
+<li class='mutator'>UOI4</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>org.apache.commons.compress.compressors.BZip2TestCase.testBzip2Unarchive(org.apache.commons.compress.compressors.BZip2TestCase) (2 ms)</li><li>org.apache.commons.compress.compressors.BZip2TestCase.testBzipCreation(org.apache.commons.compress.compressors.BZip2TestCase) (12 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.7.3
+
+</body>
+</html>

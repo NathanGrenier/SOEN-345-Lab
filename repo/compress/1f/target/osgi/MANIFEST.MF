@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Created-By: 11.0.2 (Oracle Corporation)
+Tool: Bnd-0.0.238
+Bnd-LastModified: 1740191435638
+Export-Package: org.apache.commons.compress.archivers;version="1.0.0.SNA
+ PSHOT",org.apache.commons.compress.compressors;version="1.0.0.SNAPSHOT"
+ ,org.apache.commons.compress.archivers.cpio;version="1.0.0.SNAPSHOT",or
+ g.apache.commons.compress.archivers.tar;version="1.0.0.SNAPSHOT",org.ap
+ ache.commons.compress.changes;version="1.0.0.SNAPSHOT",org.apache.commo
+ ns.compress.utils;version="1.0.0.SNAPSHOT",org.apache.commons.compress.
+ archivers.zip;version="1.0.0.SNAPSHOT",org.apache.commons.compress.arch
+ ivers.ar;version="1.0.0.SNAPSHOT",org.apache.commons.compress.archivers
+ .jar;version="1.0.0.SNAPSHOT",org.apache.commons.compress.compressors.g
+ zip;version="1.0.0.SNAPSHOT",org.apache.commons.compress.compressors.bz
+ ip2;version="1.0.0.SNAPSHOT"
+Import-Package: org.apache.commons.compress.archivers;version="1.0.0.SNA
+ PSHOT",org.apache.commons.compress.archivers.ar;version="1.0.0.SNAPSHOT
+ ",org.apache.commons.compress.archivers.cpio;version="1.0.0.SNAPSHOT",o
+ rg.apache.commons.compress.archivers.jar;version="1.0.0.SNAPSHOT",org.a
+ pache.commons.compress.archivers.tar;version="1.0.0.SNAPSHOT",org.apach
+ e.commons.compress.archivers.zip;version="1.0.0.SNAPSHOT",org.apache.co
+ mmons.compress.changes;version="1.0.0.SNAPSHOT",org.apache.commons.comp
+ ress.compressors;version="1.0.0.SNAPSHOT",org.apache.commons.compress.c
+ ompressors.bzip2;version="1.0.0.SNAPSHOT",org.apache.commons.compress.c
+ ompressors.gzip;version="1.0.0.SNAPSHOT",org.apache.commons.compress.ut
+ ils;version="1.0.0.SNAPSHOT"
+Bundle-Version: 1.0.0.SNAPSHOT
+Bundle-SymbolicName: org.apache.commons.compress
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-DocURL: http://commons.apache.org/compress/
+Bundle-Description: Commons Compress is a component that contains Ar, Cp
+ io, Jar, Tar, Zip and BZip2 packages
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Name: Commons Compress
+
